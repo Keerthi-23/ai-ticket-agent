@@ -24,7 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-   - name: Run Core & Resilience Tests
+    - name: Run Core & Resilience Tests
       env:
         PYTHONPATH: .
       run: |
@@ -32,6 +32,7 @@ jobs:
 
     - name: Run AI Evaluation Guardrail Checks
       env:
+        PYTHONPATH: .
         AI_MODEL_API_KEY: ${{ secrets.AI_MODEL_API_KEY }}
       run: |
         pytest evals/ -v || echo "Skipping live AI metrics due to missing sandbox token"
