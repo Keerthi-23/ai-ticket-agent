@@ -4,7 +4,7 @@ import threading
 import time
 import urllib.request
 from http.server import HTTPServer
-from main import AgentHandler
+from src.main import AgentHandler
 
 class TestAgentServer(unittest.TestCase):
     @classmethod
